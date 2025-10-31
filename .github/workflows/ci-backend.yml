@@ -1,4 +1,4 @@
-name: CId Back-end
+name: CI Back-end
 on:
   push:
     branches: 
@@ -16,6 +16,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Maven Compli/Test
+      - name: Maven Compile/Test
         working-directory: sgcmapi/
         run: mvn compile test
