@@ -1,0 +1,21 @@
+name: CId Back-end
+on:
+  push:
+    branches: 
+      - 'main'
+    paths: 
+      - 'sgcmapi/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup JDK 27
+        uses: actions/setup-java@v5
+        with:
+          distribuition: 'temurin'
+          java-version: '17'
+      - name: Maven Compli/Test
+        working-directory: sgcmapi/
+        run: mvn compile test
